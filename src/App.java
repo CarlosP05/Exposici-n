@@ -5,6 +5,7 @@ public class App {
     public static String Name;
     public static double precio;
     public static int cantidad;
+    public static double Total;
 
     public static Pedidos newpedidos;
     public static Scanner leer = new Scanner(System.in);
@@ -16,7 +17,7 @@ public class App {
         
 
         do {
-            System.out.println("Bienvenido al comedor de Doña Tere, le ofrecemos: ");
+            System.out.println("Bienvenido al sistema del restaurante elija las siguientes opciones ");
             System.out.println("1- Agragar pedido");
             System.out.println("2- mostrar");
             System.out.println("3- eliminar");
@@ -59,6 +60,8 @@ public class App {
         int cantidad = leer.nextInt();
         Pedidos newPedido = new Pedidos(Name, precio, cantidad);
         lista.add(newPedido);
+        Total= precio * cantidad;
+
         
     }
     
@@ -68,6 +71,7 @@ public class App {
             System.out.println("Nombre del producto: " + pedidos.Name);
             System.out.println("Precio: " + pedidos.Getprecio());
             System.out.println("Cantidad: " + pedidos.Getcantidad());
+            System.out.println(" Total de su pedido= "+ Total );
             System.out.println("=====================================");
         }
     }
